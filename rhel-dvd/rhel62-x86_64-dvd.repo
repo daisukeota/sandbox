@@ -1,6 +1,6 @@
 [rhel62-x86_64-dvd]
 name=Red Hat Enterprise Linux 6.2 - x86_64 - DVD
-baseurl=file:///media/cdrom/
+baseurl=file:///media/RHEL_6.2 x86_64 Disc 1
 enabled=0
 gpgcheck=1
 gpgkey=file:///media/cdrom/RPM-GPG-KEY-redhat-release

@@ -1,0 +1,6 @@
+[rhel70-x86_64-dvd]
+name=Red Hat Enterprise Linux 7.0 - x86_64 - DVD
+baseurl=file:///run/media/daisuke/RHEL-7.0\ Server.x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=file:///run/media/daisuke/RHEL-7.0\ Server.x86_64/RPM-GPG-KEY-redhat-release

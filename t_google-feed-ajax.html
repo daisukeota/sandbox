@@ -1,0 +1,24 @@
+<html>
+<head>
+・
+・
+・
+<script type="text/javascript" src="http://www.google.com/jsapi/"></script>
+<script type="text/javascript">
+google.load("jquery","1");
+google.load("feeds","1");
+google.setOnLoadCallback(function(){
+  var feed = new google.feeds.Feed("http://feedblog.ameba.jp/rss/ameblo/prostaff1/rss20.xml");
+  feed.setNumEntries(10);
+  feed.load(function(result){
+    $.each(result.feed.entries,function(){
+      $("#feed_panel").append("<p><b>" + this.title + "</b></p>" + "<div>" + this.publishedDate + "</div>" + this.contentSnippet + "<hr />");
+    });
+  });
+}); //google.setOnLoadCallback
+</script>
+</head>
+<body>
+<div id="feed_panel"></div>
+</body>
+</html>

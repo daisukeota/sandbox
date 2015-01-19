@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja" id="rank.neoflow.info">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="[% feed.description.html %]" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="alternate" type="application/atom+xml" title="Atom: [% feed.title | html %]" href="[% url.atom %]" />
+		<link rel="alternate" type="application/rss+xml" title="RSS: [% feed.title | html %]" href="[% url.rss %]" />
+		[% IF url.opml -%]
+		<link rel="subscriptions" type="text/x-opml" title="Subscriptions" href="[% url.opml %]" />
+		[% END -%]
+		[% FOREACH style = style_url.list -%]
+		<link href="[% style | html %]" rel="stylesheet" type="text/css" media="screen" />
+		[% END %]
+		<title>[% feed.title.html %]</title>
+		<!-- nend.net (nf_320x50_rank) --> 
+		<script type="text/javascript">
+		var nend_params = {"media":5654,"site":100079,"spot":248321,"type":2,"oriented":1};
+		</script>
+		<script type="text/javascript" src="http://js1.nend.net/js/nendAdLoader.js"></script>
+		<!--  /nend.net -->
+	</head>
+[% USE util = Plagger.Util -%]
+<body>
+<div class="container">
+    <div class="top-bar">
+        <div class="logo">
+            <img src="http://neoflow.jp/static/images/143_59_logo_.gif" width="143" height="59">
+        </div>
+    </div>
+    <header class="navbar" role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">&nbsp;</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="http://rank.neoflow.info/" target="_blank">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ランキング<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://rank.neoflow.info/daily" target="_blank">デイリーランキング</a></li>
+                        <li><a href="http://rank.neoflow.info/weekly" target="_blank">ウィークリーランキング</a></li>
+                        <li><a href="http://rank.neoflow.info/monthly" target="_blank">マンスリーランキング</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">規約<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://rank.neoflow.info/tos" target="_blank">利用規約</a></li>
+                        <li><a href="http://rank.neoflow.info/disclaimer" target="_blank">免責事項</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="/signup.html">会員登録（ただいま募集しておりません）</a>
+                </li>
+                <li>
+                    <a href="/signin.html">サインイン（準備中）</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+    </header>
+    <div class="page-title">
+        <div class="row ">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <h2>[% feed.description.html %]</h2>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <!-- Stats Start -->
+                <ul class="stats hidden-sm hidden-xs">
+                </ul>
+                <!-- Stats End -->
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-8 col-sm-8 col-sx-8">
+    <div class="hidden-xs">
+    	<p class="text-center">
+		<!-- do_728x90 -->
+		<!-- admax -->
+		<script src="http://adm.shinobi.jp/s/fb4a25948ff76077d7b5c7c69ac59b4b"></script>
+		<!-- admax -->
+		</p>
+    </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-sx-4">
+		<form action="http://www.google.co.jp/cse" id="cse-search-box">
+		  <div>
+		    <input type="hidden" name="cx" value="partner-pub-3237472399219335:1892766889" />
+		    <input type="hidden" name="ie" value="UTF-8" />
+		    <input type="text" name="q" size="42" />
+		    <input type="submit" name="sa" value="検索" />
+		  </div>
+		</form>
+		
+		<script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja"></script>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-sx-12">
+    <div class="visible-xs">
+        <div class="panel panel-default">
+            <div class="panel-body">
+		    	<p class="text-center">
+            	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- do_320x50 -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:320px;height:50px"
+				     data-ad-client="ca-pub-3237472399219335"
+				     data-ad-slot="8846492081"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-sm-2 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">当ページの目的</h3>
+            </div>
+            <div class="panel-body">
+                <p>音楽好き管理人のデュークと申します。</p><p>有料の歌詞検索APIを駆使して数々の「アッついフレーズ」を放つ曲 TOP 100 をランキング！のついでに巷の反応を調査して無料提供しています。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-sx-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">お知らせ</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="http://www.4einstitute.jp/">4E institute 社</a>の<a href="http://www.kget.jp/api/">歌詞GET API</a> を叩いてみました。(2014/10/11)</li>
+                    <li><a href="http://www.kget.jp/api/">歌詞GET API</a> を駆使して<a href="http://rank.neoflow.info/">ブログ</a>と Web サイトを立ち上げました。(2014/10/12)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-sx-4">
+    	<p class="text-center">
+		<!-- do_300x250 -->
+		<!-- admax -->
+		<script type="text/javascript" src="http://adm.shinobi.jp/s/808be76093a535132cb214f9cdc5545b"></script>
+		<!-- admax -->
+		</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 col-sm-8 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">みんなの反応</h3>
+            </div>
+            <div class="panel-body">
+                [% FOREACH entry = entries %]
+                    <a id="[% entry.id_safe %]"></a>
+                    <div id="entry-[% entry.id_safe %]"></div>
+                    <h3>
+                    [% IF entry.source.title %]
+                        <a href="[% entry.source.link | html %]">[% entry.source.title.html %]</a>:
+                    [% END %]
+                    <a href="[% entry.permalink | html %]">[% entry.title.html %]</a>
+                    </h3>
+                    
+                    [% IF entry.icon %]
+                        <div><img src="[% entry.icon.url | html %]" [% util.dumbnail(entry.icon, width=150, height=100) %] border="0" alt="[% (entry.icon.title || entry.title) | html %]" class="img-rounded" /></div>
+                    [% END %]
+                    
+                    [% entry.body.html %]
+                    <span>Posted
+                        [% IF entry.author %]by [% entry.author | html %][% END %]
+                        [% IF entry.tags.size %] on <span class="tag">[% entry.tags.join('</span>, <span>') %]</span>[% END %]
+                        [% IF entry.date %] at [% entry.date.format('Mail') %][% END %]
+                    </span>
+                    <span>|</span>
+                    <a href="[% entry.permalink | html %]">Permalink</a>
+                    
+                    [% FOREACH widget = entry.widgets %]
+                        | [% widget.html(entry) %]
+                    [% END %]
+                [% END %]
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-sx-4">
+        <p class="text-center">
+        <script type="text/javascript" language="javascript" src="http://image.kget.jp/kgetweb2/bnr/search_300x260/index.js"></script><noscript><a href="http://www.kget.jp/" target="_blank"><img alt="歌詞ＧＥＴ" src="http://image.kget.jp/kgetweb2/bnr/search_300x260/img/alt.gif" width="300" height="260" border="0"></a></noscript>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-sm-2 col-sx-12">
+	    <div class="col-md-2 col-sm-2 col-sx-2">
+		    <div class="hidden-xs">
+		    	<p class="text-center">
+				<!-- do_160x600 -->
+				<!-- admax -->
+				<script type="text/javascript" src="http://adm.shinobi.jp/s/c12ee6ef17b433f665846adb002ea81c"></script>
+				<!-- admax -->
+				</p>
+		    </div>
+	    </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">管理人の考察</h3>
+            </div>
+            <div class="panel-body">
+                <p>ここには管理人の所感を書こうかな。みたいな。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">空きスペース</h3>
+            </div>
+            <div class="panel-body">
+                <p>空きスペース、みたいな。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">空きスペース</h3>
+            </div>
+            <div class="panel-body">
+                <p>空きスペース、みたいな。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Contact</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>Tel<p/>- 準備中</li>
+                    <li>Email<p/>- 準備中</li>
+                    <li>Twitter<p/>- 準備中</li>
+                    <li>Facebook<p/>- 準備中</li>
+                    <li>Google+<p/>- 準備中</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">What we do</h3>
+            </div>
+            <div class="panel-body">
+                <p>土日で Web サイトをつくって遊んでいます。Web スクレイピングが得意です。</p>
+                <ul>
+                    <li>SEO<p/>サテライトサイトの構築と運用</li>
+                    <li>Perl<p/>Catalyst,Plagger,Web::Scraper</li>
+                    <li>PHP<p/>Codeigniter</li>
+                    <li>JavaScript<p/>jQuery,Bootstrap3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Community</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>Tel<p/>- 準備中</li>
+                    <li>Email<p/>- 準備中</li>
+                    <li>Twitter<p/>- 準備中</li>
+                    <li>Facebook<p/>- 準備中</li>
+                    <li>Google+<p/>- 準備中</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Support</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>Tel<p/>- 準備中</li>
+                    <li>Email<p/>- 準備中</li>
+                    <li>Twitter<p/>- 準備中</li>
+                    <li>Facebook<p/>- 準備中</li>
+                    <li>Google+<p/>- 準備中</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="footer" class="row">
+        <span class="copyright">
+            &copy; Copyright <a href="http://neoflow.co.jp/" target="_blank">Neoflow. Co., Ltd.</a> All Rights Reserved.
+            Powerd by <a href="http://www.kget.jp/api/" target="_blank">歌詞GET API</a> - <a href="http://www.4einstitute.jp/" target="_blank">&copy; 4E institute, Limited.</a>
+        </span>
+    </div>
+</div>
+<!-- Facebook Wall -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Google Analytics -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

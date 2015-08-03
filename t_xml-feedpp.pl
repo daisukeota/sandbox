@@ -10,13 +10,15 @@ sub search_jvn_by_cve{
         # --------------------------------------------------------------------------- #
         # 応答は RSS フィード
         # ex) http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&keyword=CVE-2015-5477
-        my $source = 'http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&keyword='."$_";
+        my $source = 'http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&keyword='."@_";
+        print $source."\n";
         my $feed = XML::FeedPP->new( $source, utf8_flag => 0 );
         &dump($feed->get_item());
         print '--- 上記データの取得結果 ---'."\n";
         foreach ( $feed->get_item() ){
-        		# 普通に取得できる
+                # 普通に取得できる
                 print 'title:', $_->title(), "\n";
+                print 'link:', $_->link(), "\n";
                 print 'description:', $_->description(), "\n";
                 
                 # get() 利用で取得できる　（参考：http://worklog.be/archives/3048）
@@ -24,8 +26,8 @@ sub search_jvn_by_cve{
                 print '-rdf:about:',$_->get("-rdf:about"), "\n";
                 
                 # get() 利用でも取得できない？
-                #print 'sec:cpe-item_-name:',$_->get_value("sec:cpe-item"), "\n";
-                print 'sec:cpe-item_-name:',$_->get("sec:cpe-item", "sec:vname"), "\n";
+                print 'sec:cpe-item_-name:',$_->get('-name'), "\n";
+                print 'sec:cvss:', $_->get('-score/sec:cvss'), "\n";
         }
         return %jvn_params;
 }

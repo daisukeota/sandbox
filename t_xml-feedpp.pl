@@ -14,17 +14,17 @@ sub search_jvn_by_cve{
         print $source."\n";
         my $feed = XML::FeedPP->new( $source, utf8_flag => 0 );
         &dump($feed->get_item());
-        print '--- 上記データの取得結果 ---'."\n";
+        print "¥n¥n".'--- 上記データの取得結果 ---'."\n";
         foreach ( $feed->get_item() ){
                 # 普通に取得できる
                 print 'title:', $_->title(), "\n";
                 print 'link:', $_->link(), "\n";
                 print 'description:', $_->description(), "\n";
-                
+
                 # get() 利用で取得できる　（参考：http://worklog.be/archives/3048）
                 print 'sec:identifier:', $_->get("sec:identifier"), "\n";
                 print '-rdf:about:',$_->get("-rdf:about"), "\n";
-                
+
                 # get() 利用でも取得できない？
                 print 'sec:cpe-item_-name:',$_->get('-name'), "\n";
                 print 'sec:cvss:', $_->get('-score/sec:cvss'), "\n";

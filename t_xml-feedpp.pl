@@ -14,6 +14,7 @@ sub search_jvn_by_cve{
         print $source."\n";
         my $feed = XML::FeedPP->new( $source, utf8_flag => 0 );
         &dump($feed->get_item());
+        
         print "¥n¥n".'--- 上記データの取得結果 ---'."\n";
         foreach ( $feed->get_item() ){
                 # 普通に取得できる
@@ -23,11 +24,15 @@ sub search_jvn_by_cve{
 
                 # get() 利用で取得できる　（参考：http://worklog.be/archives/3048）
                 print 'sec:identifier:', $_->get("sec:identifier"), "\n";
-                print '-rdf:about:',$_->get("-rdf:about"), "\n";
-
-                # get() 利用でも取得できない？
-                print 'sec:cpe-item_-name:',$_->get('-name'), "\n";
-                print 'sec:cvss:', $_->get('-score/sec:cvss'), "\n";
+                print '-rdf:about:', $_->get("-rdf:about"), "\n";
+                
+                # get() 利用で取得できる　（参考：http://milk-tea.myvnc.com/blog/adiary.cgi/0173）
+                print 'sec:cpe-item_-name:', $_->get('sec:cpe-item/-name'), "\n";
+                print 'sec:cvss:', $_->get('sec:cvss/-score'), "\n";
+                
+                # get() で取得できない場合の取得方法
+                print 'sec:cpe-item_sec:title:', $_->{'sec:cpe-item'}->{'sec:title'}, "\n";
+                print 'sec:cpe-item_sec:vname:', $_->{'sec:cpe-item'}->{'sec:vname'}, "\n";
         }
         return %jvn_params;
 }

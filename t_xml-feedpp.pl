@@ -1,8 +1,9 @@
 #!/usr/bin/env perl
 use XML::FeedPP;
+use URI::Escape;
 
 my %jvn_params;
-&search_jvn_by_cve('CVE-2015-5477');
+&search_jvn_by_cve( uri_escape_utf8('CVE-2015-2980') );
 
 sub search_jvn_by_cve{
         # =========================================================================== #

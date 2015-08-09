@@ -16,7 +16,7 @@ sub search_jvn_by_cve{
         my $feed = XML::FeedPP->new( $source, utf8_flag => 0 );
         &dump($feed->get_item());
         
-        print "¥n¥n".'--- 上記データの取得結果 ---'."\n";
+        print "\n\n".'--- 上記データの取得結果 ---'."\n";
         foreach ( $feed->get_item() ){
                 # 普通に取得できる
                 print 'title:', $_->title(), "\n";

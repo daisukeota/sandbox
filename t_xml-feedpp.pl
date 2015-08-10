@@ -3,15 +3,15 @@ use XML::FeedPP;
 use URI::Escape;
 
 my %jvn_params;
-&search_jvn_by_cve( uri_escape_utf8('CVE-2015-2980') );
+&search_jvn_by_cve( uri_escape_utf8('CVE-2015-5477') );
 
 sub search_jvn_by_cve{
         # =========================================================================== #
         # 引数は CVN 番号（単一）。JVN API を叩いて CVSS, CWE, CPE を取得する。
         # --------------------------------------------------------------------------- #
         # 応答は RSS フィード
-        # ex) http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&keyword=CVE-2015-5477
-        my $source = 'http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&keyword='."@_";
+        # ex) http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n&keyword=CVE-2015-5477&lang=ja
+        my $source = 'http://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n&keyword='."@_".'&lang=ja';
         print $source."\n";
         my $feed = XML::FeedPP->new( $source, utf8_flag => 0 );
         &dump($feed->get_item());

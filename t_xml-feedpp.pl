@@ -18,22 +18,30 @@ sub search_jvn_by_cve{
         
         print "\n\n".'--- 上記データの取得結果 ---'."\n";
         foreach ( $feed->get_item() ){
-                # 普通に取得できる
-                print 'title:', $_->title(), "\n";
-                print 'link:', $_->link(), "\n";
-                print 'description:', $_->description(), "\n";
-
-                # get() 利用で取得できる　（参考：http://worklog.be/archives/3048）
-                print 'sec:identifier:', $_->get("sec:identifier"), "\n";
-                print '-rdf:about:', $_->get("-rdf:about"), "\n";
-                
-                # get() 利用で取得できる　（参考：http://milk-tea.myvnc.com/blog/adiary.cgi/0173）
-                print 'sec:cpe-item_-name:', $_->get('sec:cpe-item/-name'), "\n";
-                print 'sec:cvss:', $_->get('sec:cvss/-score'), "\n";
-                
-                # get() で取得できない場合の取得方法
-                print 'sec:cpe-item_sec:title:', $_->{'sec:cpe-item'}->{'sec:title'}, "\n";
-                print 'sec:cpe-item_sec:vname:', $_->{'sec:cpe-item'}->{'sec:vname'}, "\n";
+			print 'jvn_title: ', $_->title(),"\n";
+			print 'jvn_link: ', $_->link(),"\n";
+			print 'jvn_description: ', $_->description(),"\n";
+			
+			# get() 利用で取得できる　（参考：http://milk-tea.myvnc.com/blog/adiary.cgi/0173）
+			print 'jvn_publisher: ', $_->get("dc:publisher"),"\n";
+			print 'jvn_creator: ', $_->get("dc:creator"),"\n";
+			print 'jvn_modified: ', $_->get("dcterms:modified"),"\n";
+			print 'jvn_date: ', $_->get("dc:date"),"\n";
+			print 'jvn_identifier: ', $_->get("sec:identifier"),"\n";
+			print 'jvn_issued: ', $_->get("dcterms:issued"),"\n";
+			print 'jvn_about: ', $_->get("-rdf:about"),"\n";
+			
+			# 2層
+			print 'jvn_cvss_severity: ', $_->get('sec:cvss/-severity'),"\n";
+			print 'jvn_cvss_vector: ', $_->get('sec:cvss/-vector'),"\n";
+			print 'jvn_cvss_version: ', $_->get('sec:cvss/-version'),"\n";
+			print 'jvn_cvss_score: ', $_->get('sec:cvss/-score'),"\n";
+			print 'jvn_cpe_title: ', $_->get('sec:cpe-item/sec:title'),"\n";
+			print 'jvn_cpe_name: ', $_->get('sec:cpe-item/-name'),"\n";
+			print 'jvn_cpe_vname: ', $_->get('sec:cpe-item/sec:vname'),"\n";
+			
+			# sec:references は　-id, -source, #text の3要素からなるハッシュ
+			print 'jvn_references: ', $_->get('sec:references'),"\n";
         }
         return %jvn_params;
 }
